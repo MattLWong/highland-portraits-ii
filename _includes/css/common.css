@@ -67,6 +67,10 @@ header {
   padding-right: 0px;
 }
 
+.nav li.active {
+  color: #8c8c8c;
+}
+
 
 .book-now {
   display: inline-block;
@@ -118,7 +122,7 @@ header {
 .book-now p {
   font-size: 9px;
   padding: 9px 22px;
-  font-family: "Nunito", avenir;
+  font-family: avenir, "Lato";
   color: white;
 }
 
@@ -183,10 +187,70 @@ main {
 /*SERVICES------------*/
 
 
+.services-page {
 
-/*ABOUT----------------*/
+}
+
+/*INFO----------------*/
+
+.info-page {
+  background: red;
+  margin-top: 150px;
+}
 
 
+/*CONTACT*/
+
+.contact-page {
+  margin-top: 50px;
+  margin-right: 20px;
+}
+
+.h-bar, .c-matt {
+  padding: 17px;
+}
+
+.h-bar hr {
+  border: none;
+  color: #bbb;
+  background-color: #bbb;
+  height: 1px;
+}
+
+.c-me {
+  text-align: center;
+  font-size: 16px;
+}
+
+.c-info {
+  margin-right: 17px;
+  padding-top: 17px;
+  font-size: 14px;
+}
+
+.spacer {
+  padding-bottom: 12px;
+}
+
+.c-info-left {
+  float: left;
+  width: 41.6667%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.c-info-picture {
+  float: left;
+  width: 58.3333%;
+}
+
+.email {
+  overflow-x: hidden;
+}
+
+#self-portrait {
+  width: 100%;
+}
 
 /*SPINNER*/
 .spinner {

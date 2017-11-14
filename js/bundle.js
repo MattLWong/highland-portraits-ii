@@ -11138,7 +11138,7 @@ var _gallery2 = _interopRequireDefault(_gallery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log("Hello");
+console.log("Greetings visitor!");
 document.addEventListener('DOMContentLoaded', function () {
   var root = document.getElementById('root');
   _reactDom2.default.render(_react2.default.createElement(_wrapper2.default, null), root);
@@ -20234,9 +20234,21 @@ var _gallery = __webpack_require__(86);
 
 var _gallery2 = _interopRequireDefault(_gallery);
 
+var _services = __webpack_require__(164);
+
+var _services2 = _interopRequireDefault(_services);
+
+var _contact = __webpack_require__(163);
+
+var _contact2 = _interopRequireDefault(_contact);
+
 var _header = __webpack_require__(161);
 
 var _header2 = _interopRequireDefault(_header);
+
+var _info = __webpack_require__(162);
+
+var _info2 = _interopRequireDefault(_info);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20252,20 +20264,100 @@ var Wrapper = function (_React$Component) {
   function Wrapper(props) {
     _classCallCheck(this, Wrapper);
 
-    return _possibleConstructorReturn(this, (Wrapper.__proto__ || Object.getPrototypeOf(Wrapper)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Wrapper.__proto__ || Object.getPrototypeOf(Wrapper)).call(this, props));
+
+    _this.state = {
+      galleryVisible: true,
+      servicesVisible: false,
+      infoVisible: false,
+      contactVisible: false
+    };
+    _this.loadServices = _this.loadServices.bind(_this);
+    _this.loadGallery = _this.loadGallery.bind(_this);
+    _this.loadInfo = _this.loadInfo.bind(_this);
+    _this.loadContact = _this.loadContact.bind(_this);
+    return _this;
   }
 
   _createClass(Wrapper, [{
+    key: 'loadServices',
+    value: function loadServices() {
+      var _this2 = this;
+
+      this.removeClasses();
+      document.getElementById("services").classList.add("active");
+      if (this.state.servicesVisible == false) {
+        this.setState({ galleryVisible: false, infoVisible: false, contactVisible: false }, function () {
+          _this2.setState({ servicesVisible: true });
+        });
+      }
+    }
+  }, {
+    key: 'loadGallery',
+    value: function loadGallery() {
+      var _this3 = this;
+
+      this.removeClasses();
+      if (this.state.galleryVisible == false) {
+        this.setState({ servicesVisible: false, infoVisible: false, contactVisible: false }, function () {
+          _this3.setState({ galleryVisible: true });
+        });
+      }
+    }
+  }, {
+    key: 'loadInfo',
+    value: function loadInfo() {
+      var _this4 = this;
+
+      this.removeClasses();
+      document.getElementById("info").classList.add("active");
+      if (this.state.infoVisible == false) {
+        this.setState({ servicesVisible: false, galleryVisible: false, contactVisible: false }, function () {
+          console.log("Hello");
+          _this4.setState({ infoVisible: true });
+        });
+      }
+    }
+  }, {
+    key: 'loadContact',
+    value: function loadContact() {
+      var _this5 = this;
+
+      this.removeClasses();
+      document.getElementById('contact').classList.add("active");
+      if (this.state.contactVisible == false) {
+        this.setState({ servicesVisible: false, galleryVisible: false, infoVisible: false }, function () {
+          _this5.setState({ contactVisible: true });
+        });
+      }
+    }
+  }, {
+    key: 'removeClasses',
+    value: function removeClasses() {
+      document.getElementById("services").classList.remove("active");
+      document.getElementById('info').classList.remove("active");
+      document.getElementById('contact').classList.remove("active");
+    }
+  }, {
     key: 'render',
     value: function render() {
+
       return _react2.default.createElement(
         'div',
         { className: 'wrapper' },
-        _react2.default.createElement(_header2.default, null),
+        _react2.default.createElement(_header2.default, {
+          loadServices: this.loadServices,
+          loadGallery: this.loadGallery,
+          loadInfo: this.loadInfo,
+          loadContact: this.loadContact
+        }),
         _react2.default.createElement(
           'main',
           { id: 'main' },
-          _react2.default.createElement(_gallery2.default, null)
+          this.state.galleryVisible ? _react2.default.createElement(_gallery2.default, null) : null,
+          this.state.servicesVisible ? _react2.default.createElement(_services2.default, null) : null,
+          this.state.infoVisible ? _react2.default.createElement(_info2.default, null) : null,
+          this.state.contactVisible ? _react2.default.createElement(_contact2.default, null) : null
         )
       );
     }
@@ -20318,7 +20410,7 @@ var Header = function (_React$Component) {
         null,
         _react2.default.createElement(
           "a",
-          { href: "/" },
+          { href: "/", onClick: this.props.loadGallery },
           _react2.default.createElement(
             "div",
             { className: "logo" },
@@ -20338,17 +20430,17 @@ var Header = function (_React$Component) {
           { className: "nav" },
           _react2.default.createElement(
             "li",
-            { className: "services" },
+            { id: "services", onClick: this.props.loadServices },
             "SERVICES"
           ),
           _react2.default.createElement(
             "li",
-            { className: "info" },
+            { id: "info", onClick: this.props.loadInfo },
             "INFO"
           ),
           _react2.default.createElement(
             "li",
-            { className: "contact" },
+            { id: "contact", onClick: this.props.loadContact },
             "CONTACT"
           )
         ),
@@ -20369,17 +20461,17 @@ var Header = function (_React$Component) {
             { className: "external-links" },
             _react2.default.createElement(
               "a",
-              { href: "#", className: "facebook-icon" },
+              { href: "https://www.facebook.com/highlandportraits/", className: "facebook-icon" },
               _react2.default.createElement("span", { className: "external-link first fa fa-facebook-official" })
             ),
             _react2.default.createElement(
               "a",
-              { href: "#", className: "facebook-icon" },
+              { href: "#", className: "instagram-icon" },
               _react2.default.createElement("span", { className: "external-link fa fa-instagram" })
             ),
             _react2.default.createElement(
               "a",
-              { href: "#", className: "mail-icon" },
+              { href: "mailto:matt@highlandportraits.com", className: "mail-icon" },
               _react2.default.createElement("span", { className: "external-link fa fa-envelope" })
             )
           )
@@ -20397,6 +20489,239 @@ var Header = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Header;
+
+/***/ }),
+/* 162 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(51);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Info = function (_React$Component) {
+  _inherits(Info, _React$Component);
+
+  function Info() {
+    _classCallCheck(this, Info);
+
+    return _possibleConstructorReturn(this, (Info.__proto__ || Object.getPrototypeOf(Info)).apply(this, arguments));
+  }
+
+  _createClass(Info, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement("div", { className: "info-page" });
+    }
+  }]);
+
+  return Info;
+}(_react2.default.Component);
+
+exports.default = Info;
+
+/***/ }),
+/* 163 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(51);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Contact = function (_React$Component) {
+  _inherits(Contact, _React$Component);
+
+  function Contact() {
+    _classCallCheck(this, Contact);
+
+    return _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).apply(this, arguments));
+  }
+
+  _createClass(Contact, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'contact-page' },
+        _react2.default.createElement(
+          'div',
+          { className: 'h-bar' },
+          _react2.default.createElement('hr', null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'c-matt' },
+          _react2.default.createElement(
+            'p',
+            { className: 'c-me' },
+            'CONTACT MATT:'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'h-bar' },
+          _react2.default.createElement('hr', null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'c-info clearfix' },
+          _react2.default.createElement(
+            'div',
+            { className: 'c-info-left' },
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: 'http://mattlwong.com' },
+                'Matt Wong'
+              ),
+              ' (b. 1990) is a portrait photographer based in Berkeley CA.'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'spacer' },
+              '\xA0'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'He is available for commissions throughout the East Bay, San Francisco, and beyond.'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'spacer' },
+              '\xA0'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'email' },
+              'E: matt(at)highlandportraits.com'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'spacer' },
+              '\xA0'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'P: 619-729-1269'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'c-info-picture' },
+            _react2.default.createElement('img', { id: 'self-portrait',
+              src: 'http://res.cloudinary.com/mwong9968/image/upload/v1510648287/highland-admin/_D618751.jpg' })
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'h-bar' },
+          _react2.default.createElement('hr', null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'c-matt' },
+          _react2.default.createElement(
+            'p',
+            { className: 'c-me' },
+            'CLIENTS + PUBLISHED WORK:'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'h-bar' },
+          _react2.default.createElement('hr', null)
+        )
+      );
+    }
+  }]);
+
+  return Contact;
+}(_react2.default.Component);
+
+exports.default = Contact;
+
+/***/ }),
+/* 164 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(51);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Services = function (_React$Component) {
+  _inherits(Services, _React$Component);
+
+  function Services() {
+    _classCallCheck(this, Services);
+
+    return _possibleConstructorReturn(this, (Services.__proto__ || Object.getPrototypeOf(Services)).apply(this, arguments));
+  }
+
+  _createClass(Services, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement("div", { className: "services-page" });
+    }
+  }]);
+
+  return Services;
+}(_react2.default.Component);
+
+exports.default = Services;
 
 /***/ })
 /******/ ]);

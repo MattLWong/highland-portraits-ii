@@ -6,6 +6,7 @@ html, body, div, nav, article, img, address, blockquote, h1, h2, h3, h4, h5, h6,
   font: inherit;
   text-align: inherit;
   text-decoration: inherit;
+  font-size: inherit;
   color: inherit;
   text-transform: inherit;
 
@@ -23,13 +24,16 @@ html {
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'Freight-Sans', "Lato", sans-serif;
   text-align: left;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.8em;
   -webkit-text-size-adjust: none;
   -ms-text-size-adjust: none;
   text-size-adjust: none;
+  color: #4a4a4a;
+  letter-spacing: 1px;
+  font-weight: 400;
 }
 
 a {
@@ -37,8 +41,8 @@ a {
 }
 
 p {
-  font-size: 13px;
-  font-family: "Lato", serif;
+  font-size: 14px;
+  font-family: 'fsm', "Lato", serif;
 }
 
 p a {

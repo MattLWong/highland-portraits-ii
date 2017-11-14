@@ -1,6 +1,6 @@
 ---
 ---
-
+{% include css/font.css %}
 {% include css/reset.css %}
 {% include css/common.css %}
 {% include css/gallery-flex.css %}
