@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Portraits,LinkedIn,Photography,Portrait,Professional,Imagery">
+    <meta name="description" content="San Francisco Bay Area's premier headshot and portrait photographer specializing in actor's headshots, corporate headshots, executive and business portraits. Easy booking today.">
+    <title>{% if page.title %} {{page.title}} | Highland Portraits {% endif %} {% if page.titleAfter %} Highland Portraits | A Premier Photography Studio based in North Berkeley {% endif %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Cedarville+Cursive|Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="shortcut icon" type="image/png" href="/img/admin/h.jpg"/> 
+    <script src="https://code.jquery.com/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="{{site.baseurl}}/js/bundle.js"></script>
+    <script src="https://use.fontawesome.com/3f219837f4.js"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91640767-3"></script> -->
+    <!-- <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-91640767-3');
+    </script> -->
+  </head>
+  <body>
+    {% include header.html %}
+    <main id="main">
+      {{content}}
+    </main>
+  </body>
+</html>

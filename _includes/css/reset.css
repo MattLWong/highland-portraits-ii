@@ -1,0 +1,96 @@
+html, body, div, nav, article, img, address, blockquote, h1, h2, h3, h4, h5, h6, ul, li, p, a {
+  margin: 0;
+	padding: 0;
+  border: 0;
+
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+  text-transform: inherit;
+
+  background: transparent;
+}
+
+article, aside, details, figcaption, figure, footer,
+header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+html {
+  /*border-top: 6px solid #ded9ce;*/
+  text-align: center;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 13px;
+  font-family: "Lato", serif;
+}
+
+p a {
+  font-weight: bold;
+}
+
+h1, h2, h3 {
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0 0 30px;
+    font-family: "Baskerville", serif;
+}
+
+h1 em {
+    font-family: "baskerville", "georgia", serif;
+    font-style: italic;
+}
+
+h2, h3 {
+    font-weight: normal;
+    margin: 0 0 12px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+img {
+    border: 0;
+}
+
+ol, ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+abbr {
+    border-bottom: 1px dotted #3e2f2f;
+    cursor: help;
+    padding: 0 1px;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
