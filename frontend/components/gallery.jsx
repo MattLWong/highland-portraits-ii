@@ -25,7 +25,7 @@ class Modal extends React.Component {
         <div className="overlay"
           onClick={() => this.props.toggleModal('off') }>
         </div>
-        <div className="frame"
+        <div className="frame" id="frame"
           style={this.state.imageStatus}>
           <figure>
             <div className="loader">
@@ -324,20 +324,35 @@ class Gallery extends React.Component {
   }
 
   toggleModal(string, i) {
+    let that = this;
     if (string == "off") {
-      this.setState({modalVisible: false});
+      document.getElementById('frame').style.opacity = "0"
+      setTimeout(function() {
+        that.setState({modalVisible: false});
+      }, 200)
     } else if (string == 'next') {
       if (i == this.squareUrls.length - 1) {
-        this.setState({modalVisible: true}, () => this.enlarge(0))
+        document.getElementById('frame').style.opacity = "0"
+        setTimeout(function() {
+          that.setState({modalVisible: false}, () => that.enlarge(0));
+        }, 200)
       } else {
-        this.setState({modalVisible: true}, () => this.enlarge(i+1))
-
+        document.getElementById('frame').style.opacity = "0"
+        setTimeout(function() {
+          that.setState({modalVisible: false}, () => that.enlarge(i+1));
+        }, 200)
       }
     } else if (string == 'before') {
       if (i == 0) {
-        this.setState({modalVisible: true}, () => this.enlarge(this.squareUrls.length-1))
+        document.getElementById('frame').style.opacity = "0"
+        setTimeout(function() {
+          that.setState({modalVisible: false}, () => that.enlarge(that.squareUrls.length-1))
+        }, 200)
       } else {
-        this.setState({modalVisible: true}, () => this.enlarge(i-1))
+        document.getElementById('frame').style.opacity = "0"
+        setTimeout(function() {
+          that.setState({modalVisible: false}, () => that.enlarge(i-1))
+        }, 200)
       }
     }
   }
