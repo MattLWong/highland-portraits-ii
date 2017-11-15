@@ -15,6 +15,7 @@ header {
   bottom: 53%;
   left: 50px;
   transform: translateY(45%);
+  transition: all 0.2s;
 }
 
 .logo {
@@ -22,6 +23,7 @@ header {
   width: 250px;
   height: 250px;
   position: relative;
+  cursor: pointer;
 }
 
 .logo-container {
@@ -72,14 +74,19 @@ header {
 }
 
 
-.book-now {
+#book-now {
   display: inline-block;
   background-color: #FEE161;
   transition: all 0.8s;
   border-radius: 2px;
+  cursor: pointer;
 }
 
-.book-now:hover {
+#book-now:hover {
+  background-color: #0c7c4a;
+}
+
+#book-now.active {
   background-color: #0c7c4a;
 }
 
@@ -119,7 +126,7 @@ header {
   animation-iteration-count: 1;
 }
 
-.book-now p {
+#book-now p {
   font-size: 9px;
   padding: 9px 22px;
   font-family: avenir, "Lato";
@@ -181,22 +188,125 @@ main {
   box-sizing: border-box;
   right: 0px;
   left: 380px;
+  transition: all 0.2s;
 }
 
 
 /*SERVICES------------*/
 
 
+
 .services-page {
+  margin-top: 50px;
+  animation: fadein 0.5s;
+  max-width: 650px;
+}
+
+.services-page h4 {
+  font-size: 26px;
+  letter-spacing: 1.1px;
+  margin-bottom: 14px;
+}
+
+.services-page p {
+  padding: 10px 0;
+}
+
+.h-bar-no-padding {
+  padding: 17px 0px;
+}
+
+.services-page h3 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.services-page h5 {
+  padding-top: 17px;
+}
+
+.services-page h5 strong {
+  color: black;
+}
+
+.services-page .small-gray {
+  font-size: 11px;
+  padding-top: 3px
+}
+
+.minor-details {
+  padding-top: 24px;
+}
+
+.minor-details h4 {
+  font-size: 19px;
+  text-align: center;
+}
+
+.minor-details .small-gray {
+  line-height: 19px;
+}
+
+.location, #map {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+.testimonial {
+  padding: 10px 0;
+  margin-bottom: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.testimonial p {
+  padding: 0;
+  display: block;
+  flex: 1 0 0;
+}
+
+.h3-test {
+  margin-bottom: 30px;
+}
+
+.picture-border {
+  background-color: #F2F2F2;
+  box-shadow: 0 0 0 2px lightgray;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  margin-right: 20px;
+  width: 125px;
+  height: 125px;
+  float: left;
 
 }
+
+.testimonials strong {
+  color: #282828;
+}
+
+.testimonials img {
+  float: left;
+  width: 125px;
+}
+
+.testimonial:nth-of-type(2n) .picture-border {
+  float: right;
+}
+
 
 /*INFO----------------*/
 
 .info-page {
   background: red;
-  margin-top: 150px;
+  margin-top: 50px;
+  animation: fadein 0.5s;
 }
+
 
 
 /*CONTACT*/
@@ -204,13 +314,24 @@ main {
 .contact-page {
   margin-top: 50px;
   margin-right: 20px;
+  animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .h-bar, .c-matt {
   padding: 17px;
 }
 
-.h-bar hr {
+.h-bar hr,
+.h-bar-no-padding hr {
   border: none;
   color: #bbb;
   background-color: #bbb;
@@ -235,7 +356,8 @@ main {
 .c-info-left {
   float: left;
   width: 41.6667%;
-  padding: 0 10px;
+  padding-left: 17px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
@@ -245,12 +367,51 @@ main {
 }
 
 .email {
-  overflow-x: hidden;
 }
 
 #self-portrait {
   width: 100%;
+  padding-left: 27px;
+  box-sizing: border-box;
 }
+
+/*BOOK NOW-----------------------------*/
+
+.book-now-overlay {
+  position: fixed;
+  z-index: 8;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.book-now-page {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  animation: fadein .5s;
+}
+
+#ycbmiframehighlandportraits {
+  width:100%;
+  height:1000px;
+  border:0px;
+  background-color:transparent;
+}
+
+
+@keyframes fadein {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 
 /*SPINNER*/
 .spinner {

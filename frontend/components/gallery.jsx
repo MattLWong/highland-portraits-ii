@@ -1,4 +1,6 @@
 import React from 'react';
+import {waitForEl, myMap} from '../../js/iframe';
+
 
 class Modal extends React.Component {
   constructor(props) {
@@ -304,7 +306,7 @@ class Gallery extends React.Component {
       "Jacklyn, July 2016",
       "Phil, March 2015",
       "Sandra, August 2016",
-      "Rodrigo, October 2017",
+      "Eddy, October 2017",
       "Luisa, October 2017",
       "Natalia, August 2016",
       "Richard, April 2017",
@@ -314,6 +316,13 @@ class Gallery extends React.Component {
       "Fabrice, April 2017"
     ]
   }
+  componentDidMount() {
+    // this.startMap();
+    waitForEl('#map', function() {
+      myMap();
+    });
+  }
+
   toggleModal(string, i) {
     if (string == "off") {
       this.setState({modalVisible: false});

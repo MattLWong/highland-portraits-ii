@@ -10859,6 +10859,8 @@ var _react = __webpack_require__(51);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _iframe = __webpack_require__(166);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -11021,11 +11023,19 @@ var Gallery = function (_React$Component3) {
 
     _this5.frozenUrls = ["/img/gallery/frozen/1.jpg", "/img/gallery/frozen/2.jpg", "/img/gallery/frozen/3.jpg", "/img/gallery/frozen/4.jpg", "/img/gallery/frozen/5.jpg", "/img/gallery/frozen/6.jpg", "/img/gallery/frozen/7.jpg", "/img/gallery/frozen/8.jpg", "/img/gallery/frozen/9.jpg", "/img/gallery/frozen/10.jpg", "/img/gallery/frozen/11.jpg", "/img/gallery/frozen/12.jpg", "/img/gallery/frozen/13.jpg", "/img/gallery/frozen/14.jpg", "/img/gallery/frozen/15.jpg", "/img/gallery/frozen/16.jpg", "/img/gallery/frozen/17.jpg", "/img/gallery/frozen/18.jpg", "/img/gallery/frozen/19.jpg", "/img/gallery/frozen/20.jpg", "/img/gallery/frozen/21.jpg", "/img/gallery/frozen/22.jpg", "/img/gallery/frozen/23.jpg", "/img/gallery/frozen/24.jpg", "/img/gallery/frozen/25.jpg", "/img/gallery/frozen/26.jpg", "/img/gallery/frozen/27.jpg", "/img/gallery/frozen/28.jpg", "/img/gallery/frozen/29.jpg", "/img/gallery/frozen/30.jpg", "/img/gallery/frozen/31.jpg", "/img/gallery/frozen/32.jpg", "/img/gallery/frozen/33.jpg", "/img/gallery/frozen/34.jpg", "/img/gallery/frozen/35.jpg", "/img/gallery/frozen/36.jpg", "/img/gallery/frozen/37.jpg", "/img/gallery/frozen/38.jpg", "/img/gallery/frozen/39.jpg", "/img/gallery/frozen/40.jpg", "/img/gallery/frozen/41.jpg", "/img/gallery/frozen/42.jpg", "/img/gallery/frozen/43.jpg", "/img/gallery/frozen/44.jpg", "/img/gallery/frozen/45.jpg", "/img/gallery/frozen/46.jpg", "/img/gallery/frozen/47.jpg", "/img/gallery/frozen/48.jpg", "/img/gallery/frozen/49.jpg", "/img/gallery/frozen/50.jpg", "/img/gallery/frozen/51.jpg", "/img/gallery/frozen/52.jpg"];
 
-    _this5.captions = ["Letha, March 2017", 'Claret, March 2017', 'Darshan, Red Victorian SF, May 2016', 'Baraa, April 2017', "Catherine, August 2015", "Monika, April 2017", "Chinwendu, April 2017", "Ram, January 2016", "Alex, July 2017", "Adrian, July 2017", "Rowena, April 2015", "Max, October 2017", "Ricardo, December 2015", "Andrew, November 2016", "Liz, January 2016", "Brandon, October 2017", "Su, March 2015", "Frank, October 2017", "Tiffany, August 2016", "Aymeric, March 2016", "Wayne, February 2016", "Enkhee, April 2016", "Alok, July 2016", "Lushen, November 2015", "Margaret, March 2017", "Wendy, May 2017", "Natalie, August 2016", "Lara, March 2015", "Keaton, December 2016", "Susan, April 2017", "Pavel, April 2017", "Sam, October 2017", "Adam, March 2016", "Kim, November 2016", "Peter, March 2017", "John, May 2017", "Bernie, October 2017", "Elsa, Red Victorian SF, May 2016", "Iris, November 2016", "Alec, August 2017", "Arun, May 2017", "Jacklyn, July 2016", "Phil, March 2015", "Sandra, August 2016", "Rodrigo, October 2017", "Luisa, October 2017", "Natalia, August 2016", "Richard, April 2017", "Alejandro, April 2017", "Patrick, February 2017", "Arjun, April 2017", "Fabrice, April 2017"];
+    _this5.captions = ["Letha, March 2017", 'Claret, March 2017', 'Darshan, Red Victorian SF, May 2016', 'Baraa, April 2017', "Catherine, August 2015", "Monika, April 2017", "Chinwendu, April 2017", "Ram, January 2016", "Alex, July 2017", "Adrian, July 2017", "Rowena, April 2015", "Max, October 2017", "Ricardo, December 2015", "Andrew, November 2016", "Liz, January 2016", "Brandon, October 2017", "Su, March 2015", "Frank, October 2017", "Tiffany, August 2016", "Aymeric, March 2016", "Wayne, February 2016", "Enkhee, April 2016", "Alok, July 2016", "Lushen, November 2015", "Margaret, March 2017", "Wendy, May 2017", "Natalie, August 2016", "Lara, March 2015", "Keaton, December 2016", "Susan, April 2017", "Pavel, April 2017", "Sam, October 2017", "Adam, March 2016", "Kim, November 2016", "Peter, March 2017", "John, May 2017", "Bernie, October 2017", "Elsa, Red Victorian SF, May 2016", "Iris, November 2016", "Alec, August 2017", "Arun, May 2017", "Jacklyn, July 2016", "Phil, March 2015", "Sandra, August 2016", "Eddy, October 2017", "Luisa, October 2017", "Natalia, August 2016", "Richard, April 2017", "Alejandro, April 2017", "Patrick, February 2017", "Arjun, April 2017", "Fabrice, April 2017"];
     return _this5;
   }
 
   _createClass(Gallery, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      // this.startMap();
+      (0, _iframe.waitForEl)('#map', function () {
+        (0, _iframe.myMap)();
+      });
+    }
+  }, {
     key: 'toggleModal',
     value: function toggleModal(string, i) {
       var _this6 = this;
@@ -20250,6 +20260,10 @@ var _info = __webpack_require__(162);
 
 var _info2 = _interopRequireDefault(_info);
 
+var _booknow = __webpack_require__(165);
+
+var _booknow2 = _interopRequireDefault(_booknow);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20270,12 +20284,14 @@ var Wrapper = function (_React$Component) {
       galleryVisible: true,
       servicesVisible: false,
       infoVisible: false,
-      contactVisible: false
+      contactVisible: false,
+      bookNowVisible: false
     };
     _this.loadServices = _this.loadServices.bind(_this);
     _this.loadGallery = _this.loadGallery.bind(_this);
     _this.loadInfo = _this.loadInfo.bind(_this);
     _this.loadContact = _this.loadContact.bind(_this);
+    _this.toggleBookNow = _this.toggleBookNow.bind(_this);
     return _this;
   }
 
@@ -20289,6 +20305,7 @@ var Wrapper = function (_React$Component) {
       if (this.state.servicesVisible == false) {
         this.setState({ galleryVisible: false, infoVisible: false, contactVisible: false }, function () {
           _this2.setState({ servicesVisible: true });
+          window.scrollTo(0, 0);
         });
       }
     }
@@ -20298,9 +20315,11 @@ var Wrapper = function (_React$Component) {
       var _this3 = this;
 
       this.removeClasses();
+      document.getElementById("home").classList.add("active");
       if (this.state.galleryVisible == false) {
         this.setState({ servicesVisible: false, infoVisible: false, contactVisible: false }, function () {
           _this3.setState({ galleryVisible: true });
+          window.scrollTo(0, 0);
         });
       }
     }
@@ -20313,8 +20332,8 @@ var Wrapper = function (_React$Component) {
       document.getElementById("info").classList.add("active");
       if (this.state.infoVisible == false) {
         this.setState({ servicesVisible: false, galleryVisible: false, contactVisible: false }, function () {
-          console.log("Hello");
           _this4.setState({ infoVisible: true });
+          window.scrollTo(0, 0);
         });
       }
     }
@@ -20328,14 +20347,35 @@ var Wrapper = function (_React$Component) {
       if (this.state.contactVisible == false) {
         this.setState({ servicesVisible: false, galleryVisible: false, infoVisible: false }, function () {
           _this5.setState({ contactVisible: true });
+          window.scrollTo(0, 0);
         });
       }
+    }
+  }, {
+    key: 'toggleBookNow',
+    value: function toggleBookNow() {
+      var _this6 = this;
+
+      this.setState({ bookNowVisible: !this.state.bookNowVisible }, function () {
+        var main = document.getElementById("main");
+        var header = document.getElementById('header');
+        var booknow = document.getElementById('book-now');
+        if (_this6.state.bookNowVisible) {
+          main.style.filter = "blur(2px)";
+          header.style.filter = "blur(2px)";
+          booknow.classList.add("active");
+        } else {
+          main.style.filter = "";
+          header.style.filter = "";
+          booknow.classList.remove("active");
+        }
+      });
     }
   }, {
     key: 'removeClasses',
     value: function removeClasses() {
       document.getElementById("services").classList.remove("active");
-      document.getElementById('info').classList.remove("active");
+      document.getElementById('home').classList.remove("active");
       document.getElementById('contact').classList.remove("active");
     }
   }, {
@@ -20349,7 +20389,8 @@ var Wrapper = function (_React$Component) {
           loadServices: this.loadServices,
           loadGallery: this.loadGallery,
           loadInfo: this.loadInfo,
-          loadContact: this.loadContact
+          loadContact: this.loadContact,
+          toggleBookNow: this.toggleBookNow
         }),
         _react2.default.createElement(
           'main',
@@ -20358,7 +20399,9 @@ var Wrapper = function (_React$Component) {
           this.state.servicesVisible ? _react2.default.createElement(_services2.default, null) : null,
           this.state.infoVisible ? _react2.default.createElement(_info2.default, null) : null,
           this.state.contactVisible ? _react2.default.createElement(_contact2.default, null) : null
-        )
+        ),
+        this.state.bookNowVisible ? _react2.default.createElement(_booknow2.default, {
+          toggleBookNow: this.toggleBookNow }) : null
       );
     }
   }]);
@@ -20407,10 +20450,10 @@ var Header = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         "header",
-        null,
+        { id: "header" },
         _react2.default.createElement(
           "a",
-          { href: "/", onClick: this.props.loadGallery },
+          { onClick: this.props.loadGallery },
           _react2.default.createElement(
             "div",
             { className: "logo" },
@@ -20430,13 +20473,13 @@ var Header = function (_React$Component) {
           { className: "nav" },
           _react2.default.createElement(
             "li",
-            { id: "services", onClick: this.props.loadServices },
-            "SERVICES"
+            { id: "home", className: "active", onClick: this.props.loadGallery },
+            "HOME"
           ),
           _react2.default.createElement(
             "li",
-            { id: "info", onClick: this.props.loadInfo },
-            "INFO"
+            { id: "services", onClick: this.props.loadServices },
+            "SERVICES"
           ),
           _react2.default.createElement(
             "li",
@@ -20449,7 +20492,7 @@ var Header = function (_React$Component) {
           { className: "nav-2" },
           _react2.default.createElement(
             "a",
-            { className: "book-now hvr-push", href: "#" },
+            { className: "hvr-push", id: "book-now", onClick: this.props.toggleBookNow },
             _react2.default.createElement(
               "p",
               null,
@@ -20527,7 +20570,15 @@ var Info = function (_React$Component) {
   _createClass(Info, [{
     key: "render",
     value: function render() {
-      return _react2.default.createElement("div", { className: "info-page" });
+      return _react2.default.createElement(
+        "div",
+        { className: "info-page" },
+        _react2.default.createElement(
+          "h5",
+          null,
+          "FAQ"
+        )
+      );
     }
   }]);
 
@@ -20553,6 +20604,10 @@ var _react = __webpack_require__(51);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _iframe = __webpack_require__(166);
+
+var _wufoo = __webpack_require__(167);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20564,13 +20619,31 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Contact = function (_React$Component) {
   _inherits(Contact, _React$Component);
 
-  function Contact() {
+  function Contact(props) {
     _classCallCheck(this, Contact);
 
-    return _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).call(this, props));
+
+    _this.style = {
+      fontFamily: "inherit",
+      fontSize: "small",
+      color: "#a7a7a7",
+      textAlign: "center",
+      display: "block"
+    };
+    return _this;
   }
 
   _createClass(Contact, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      // this.startMap();
+      (0, _iframe.waitForEl)('#map', function () {
+        (0, _iframe.myMap)();
+      });
+      (0, _wufoo.wufoo)();
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -20609,7 +20682,7 @@ var Contact = function (_React$Component) {
                 { href: 'http://mattlwong.com' },
                 'Matt Wong'
               ),
-              ' (b. 1990) is a portrait photographer based in Berkeley CA.'
+              ' (b. 1990) is a portrait photographer based in Berkeley CA specializing in professional and artistic headshots.'
             ),
             _react2.default.createElement(
               'p',
@@ -20629,7 +20702,12 @@ var Contact = function (_React$Component) {
             _react2.default.createElement(
               'p',
               { className: 'email' },
-              'E: matt(at)highlandportraits.com'
+              'E: ',
+              _react2.default.createElement(
+                'a',
+                { href: 'mailto:matt@highlandportraits.com' },
+                'matt(at)highlandportraits.com'
+              )
             ),
             _react2.default.createElement(
               'p',
@@ -20639,7 +20717,7 @@ var Contact = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
-              'P: 619-729-1269'
+              'P: 985-664-9866'
             )
           ),
           _react2.default.createElement(
@@ -20660,13 +20738,35 @@ var Contact = function (_React$Component) {
           _react2.default.createElement(
             'p',
             { className: 'c-me' },
-            'CLIENTS + PUBLISHED WORK:'
+            'GET IN TOUCH:'
           )
         ),
         _react2.default.createElement(
           'div',
           { className: 'h-bar' },
           _react2.default.createElement('hr', null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'wufoo-ze82gxh0y1akbl' },
+          'Fill out my ',
+          _react2.default.createElement(
+            'a',
+            { href: 'https://mwong9968.wufoo.com/forms/ze82gxh0y1akbl' },
+            'online form'
+          ),
+          '.'
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'wuf-adv', style: this.style },
+          'Use ',
+          _react2.default.createElement(
+            'a',
+            { href: 'http://www.wufoo.com/gallery/templates/' },
+            'Wufoo templates'
+          ),
+          ' to make your own HTML forms.'
         )
       );
     }
@@ -20712,9 +20812,357 @@ var Services = function (_React$Component) {
   }
 
   _createClass(Services, [{
-    key: "render",
+    key: 'render',
     value: function render() {
-      return _react2.default.createElement("div", { className: "services-page" });
+      return _react2.default.createElement(
+        'div',
+        { className: 'services-page' },
+        _react2.default.createElement(
+          'div',
+          { className: 'artistic-statement' },
+          _react2.default.createElement(
+            'h4',
+            null,
+            'Hi! Thanks for stopping by.'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'One of the first things people notice about you is your profile picture. '
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'As a portrait photographer, my objective is to create an unquestionably good image that serves your career or intended purposes. An effective picture conveys ',
+            _react2.default.createElement(
+              'strong',
+              null,
+              'trust'
+            ),
+            ', ',
+            _react2.default.createElement(
+              'strong',
+              null,
+              'mood'
+            ),
+            ', and ',
+            _react2.default.createElement(
+              'strong',
+              null,
+              'confidence'
+            ),
+            ' to the viewer. Whether you\u2019re a budding scientist studying viral structures, or a writer with a debut novel coming out, you\u2019ll definitely need a picture that complements your personality and skills. '
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Over the last three years I\u2019ve developed a simple yet clean and elegant style to portraiture that I hope comes across in my work.'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'I\u2019m a big fan of ',
+            _react2.default.createElement(
+              'strong',
+              null,
+              'color'
+            ),
+            ' (!), and studio photography \u2014 along with post-processing \u2014 allows me to introduce and control a wide spectrum of grays and chromatic gradients for the perfect backdrop.'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'If you\u2019re looking to take your profile to the next level, or just looking for a new picture, you\u2019ve found the right place!'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'h-bar-no-padding' },
+          _react2.default.createElement('hr', null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'rates-and-packages' },
+          _react2.default.createElement(
+            'h3',
+            null,
+            'Rates + Packages'
+          )
+        ),
+        _react2.default.createElement(
+          'h5',
+          null,
+          _react2.default.createElement(
+            'strong',
+            null,
+            'I. Standard '
+          ),
+          ' \u2014 An elegant, timeless indoor studio portrait.'
+        ),
+        _react2.default.createElement(
+          'p',
+          { className: 'small-gray' },
+          '40-50 min, 2 outfit changes, indoor process, 2 final digital image downloads. ($175/session)'
+        ),
+        _react2.default.createElement(
+          'h5',
+          null,
+          _react2.default.createElement(
+            'strong',
+            null,
+            'II. Outdoors '
+          ),
+          ' \u2014 An evening tour through iconic North Berkeley.'
+        ),
+        _react2.default.createElement(
+          'p',
+          { className: 'small-gray' },
+          '60-75 min, 2 outfit changes, outdoor process, 3 final digital image downloads. ($250/session)'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'minor-details' },
+          _react2.default.createElement(
+            'h4',
+            null,
+            'Minor Details'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'small-gray' },
+            _react2.default.createElement(
+              'em',
+              null,
+              'All indoor sessions include combined use of natural and artificial lighting, choice of 1-2 backdrops (matte paper or a custom-made 6x7\' ',
+              _react2.default.createElement(
+                'a',
+                { className: 'abbr', href: 'http://www.oliphantstudio.com/' },
+                'Oliphant-styled'
+              ),
+              ' canvases), shot with fast Nikkor prime lenses (50mm f/1.8, 85mm f/1.8), and access to all low-resolution files. Additional full-resolution edited images will be charged at $75/photo. Extensive editing incurs additional charge as estimated by the photographer. All prices reflect the photographer\'s time and talent, online gallery for confidential sharing, right to downloading and printing the photos. All prices are subject to change without notice.'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'medium-gray' },
+            _react2.default.createElement(
+              'em',
+              null,
+              '**All prices include CA sales tax. '
+            )
+          )
+        ),
+        _react2.default.createElement('div', { id: 'map' }),
+        _react2.default.createElement(
+          'p',
+          { className: 'spacer' },
+          '\xA0'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'h-bar-no-padding' },
+          _react2.default.createElement('hr', null)
+        ),
+        _react2.default.createElement(
+          'h3',
+          { className: 'h3-test' },
+          'Testimonials'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'testimonials clearfix' },
+          _react2.default.createElement(
+            'div',
+            { className: 'testimonial' },
+            _react2.default.createElement(
+              'div',
+              { className: 'picture-border' },
+              _react2.default.createElement('img', { src: '/img/testimonials/letha.jpg' })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              '"Matt offers a comfortable portrait session with relaxed conversation to photograph you as yourself rather than you in your most awkward pose. His photographs are well-lit and well-composed. You\'ll have a range of images from which to choose - head shots, speaking \'action\' shots, and more. His turn around time is quick and you\'ll have a good time too."',
+              _react2.default.createElement(
+                'strong',
+                null,
+                ' -Letha C.'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'clearfix testimonial' },
+            _react2.default.createElement(
+              'p',
+              null,
+              '"As he took photos, he had a real conversation with me about my interests (one of which - Classical music - we conveniently happened to share!) and created a friendly atmosphere that made it feel like I was not posing too much. For that reason I feel the portraits he took of me looked natural and even captured my personality in surprising ways."',
+              _react2.default.createElement(
+                'strong',
+                null,
+                ' -Theodora M.'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'picture-border' },
+              _react2.default.createElement('img', { src: '/img/testimonials/theodora.jpg' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'clearfix testimonial' },
+            _react2.default.createElement(
+              'div',
+              { className: 'picture-border' },
+              _react2.default.createElement('img', { src: '/img/testimonials/keith.jpg' })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              '"Matt really likes to get the person relaxed and comfortable in front of the camera; he asks (in a respectful and non-intrusive way) about life goals, passions, dreams. This process, I believe, made the experience and the portraits more intimate and personal -- which is great if you want your pictures to capture the real you! :)"',
+              _react2.default.createElement(
+                'strong',
+                null,
+                ' -Keith W.'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'clearfix testimonial' },
+            _react2.default.createElement(
+              'p',
+              null,
+              '"Matt\'s strength lies in making you comfortable. He engages you and pays attention to the minor details such as posture and lighting without making it seem so. My afternoon session was incredibly enjoyable and within 20 minutes Matt captured a full range emotions. I went in to capture myself in my natural habitat. Matt\'s work did that to perfection."',
+              _react2.default.createElement(
+                'strong',
+                null,
+                ' -Mohammad L.'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'picture-border' },
+              _react2.default.createElement('img', { src: '/img/testimonials/mohammad.jpg' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'clearfix testimonial' },
+            _react2.default.createElement(
+              'div',
+              { className: 'picture-border' },
+              _react2.default.createElement('img', { src: '/img/testimonials/jo.jpg' })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              '"As a portrait photographer, Matt strikes the perfect balance between flexible and professional. While he was willing to accommodate all of my random requests, he also made sure to capture the formal/traditional poses and backgrounds. Post-session, I received a lot of follow-up regarding the proofs and photo-editing."',
+              _react2.default.createElement(
+                'strong',
+                null,
+                ' -Jo L.'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'clearfix testimonial' },
+            _react2.default.createElement(
+              'p',
+              null,
+              '"Matthew is such a great photographer! Additionally he has such a warm and welcoming personality he sets his subjects at ease instantly, making getting a great shot a breeze. I am usually very camera shy and Matthew was able to get several great pics of me with a variety of diffferent but very flattering expressions."',
+              _react2.default.createElement(
+                'strong',
+                null,
+                ' -Jai P.'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'picture-border' },
+              _react2.default.createElement('img', { src: '/img/testimonials/jai.jpg' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'clearfix testimonial' },
+            _react2.default.createElement(
+              'div',
+              { className: 'picture-border' },
+              _react2.default.createElement('img', { src: '/img/testimonials/wendy.jpg' })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              '"Matt is awesome! Really fun and interesting to work with! He is open minded and willing to work around your ideas, which is fantastic if you want to put in your own ideas. I\'m happy to see all the results! Can\'t wait to work with him again."',
+              _react2.default.createElement(
+                'strong',
+                null,
+                ' -Wendy Z.'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'clearfix testimonial' },
+            _react2.default.createElement(
+              'p',
+              null,
+              '"Matt did a great job, and I saw for the first time that you can talk and get great pictures. I also got what is maybe the only picture of my Duchenne smile (the genuine smile)."',
+              _react2.default.createElement(
+                'strong',
+                null,
+                ' -Alok S.'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'picture-border' },
+              _react2.default.createElement('img', { src: '/img/testimonials/alok.jpg' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'clearfix testimonial' },
+            _react2.default.createElement(
+              'div',
+              { className: 'picture-border' },
+              _react2.default.createElement('img', { src: '/img/testimonials/karen.jpg' })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              '"Matt Wong is amazing. My boyfriend and I had a photography session with him and it was absolutely amazing. Matt took us to a beautiful site in Northern Berkeley and took priceless photographs of us. I am so excited to refer him to my friends and family. This is definitely a number I am holding on to." ',
+              _react2.default.createElement(
+                'strong',
+                null,
+                ' -Karen A.'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'clearfix testimonial' },
+            _react2.default.createElement(
+              'p',
+              null,
+              '"A very interesting and different approach to photo shoots. The idea is to capture you in your most natural states, rather than posing you. Matt will engage you in talking about your passions and interests and then capture you while speaking. He is very good at facilitating the conversation and picking out topics that will catch your natural self."',
+              _react2.default.createElement(
+                'strong',
+                null,
+                ' -Max V.'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'picture-border' },
+              _react2.default.createElement('img', { src: '/img/testimonials/max.jpg' })
+            )
+          )
+        )
+      );
     }
   }]);
 
@@ -20722,6 +21170,139 @@ var Services = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Services;
+
+/***/ }),
+/* 165 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(51);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BookNow = function (_React$Component) {
+  _inherits(BookNow, _React$Component);
+
+  function BookNow() {
+    _classCallCheck(this, BookNow);
+
+    return _possibleConstructorReturn(this, (BookNow.__proto__ || Object.getPrototypeOf(BookNow)).apply(this, arguments));
+  }
+
+  _createClass(BookNow, [{
+    key: "render",
+    value: function render() {
+
+      return _react2.default.createElement(
+        "div",
+        { className: "book-now-overlay",
+          onClick: this.props.toggleBookNow },
+        _react2.default.createElement(
+          "div",
+          { className: "book-now-page" },
+          _react2.default.createElement("iframe", { src: "https://highlandportraits.youcanbook.me/?noframe=true&skipHeaderFooter=true", id: "ycbmiframehighlandportraits",
+            frameBorder: "0", allowTransparency: "true" })
+        )
+      );
+    }
+  }]);
+
+  return BookNow;
+}(_react2.default.Component);
+
+exports.default = BookNow;
+
+/***/ }),
+/* 166 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var waitForEl = exports.waitForEl = function waitForEl(selector, callback) {
+  if ($(selector).length) {
+    callback();
+  } else {
+    setTimeout(function () {
+      // console.log("waiting");
+      waitForEl(selector, callback);
+    }, 1000);
+  }
+};
+
+waitForEl('#map', function () {
+  myMap();
+});
+
+var myMap = exports.myMap = function myMap() {
+  var uluru = { lat: 37.88, lng: -122.26 };
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 9,
+    center: uluru,
+    scaleControl: false,
+    mapTypeControl: false,
+    scrollwheel: false,
+    draggable: false
+  });
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+  });
+};
+
+/***/ }),
+/* 167 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var wufoo = exports.wufoo = function wufoo() {
+  var ze82gxh0y1akbl;
+  (function (d, t) {
+    var s = d.createElement(t),
+        options = {
+      'userName': 'mwong9968',
+      'formHash': 'ze82gxh0y1akbl',
+      'autoResize': true,
+      'height': '517',
+      'async': true,
+      'host': 'wufoo.com',
+      'header': 'show',
+      'ssl': true };
+    s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+    s.onload = s.onreadystatechange = function () {
+      var rs = this.readyState;if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+      try {
+        ze82gxh0y1akbl = new WufooForm();ze82gxh0y1akbl.initialize(options);ze82gxh0y1akbl.display();
+      } catch (e) {}
+    };
+    var scr = d.getElementsByTagName(t)[0],
+        par = scr.parentNode;par.insertBefore(s, scr);
+  })(document, 'script');
+};
 
 /***/ })
 /******/ ]);

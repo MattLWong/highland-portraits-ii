@@ -87,7 +87,7 @@ ol, ul {
     margin: 0;
 }
 
-abbr {
+.abbr {
     border-bottom: 1px dotted #3e2f2f;
     cursor: help;
     padding: 0 1px;
@@ -97,4 +97,8 @@ abbr {
   content: "";
   display: table;
   clear: both;
+}
+
+em {
+  font-style: italic;
 }
