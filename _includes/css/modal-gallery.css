@@ -2,7 +2,7 @@
 
 .frame {
   animation: fadein;
-  animation-duration: .5s;
+  animation-duration: 1s;
 }
 @keyframes fadein {
   from {
@@ -38,6 +38,11 @@
   transform: translate(-50%, 0);
   margin-top: 10px;
 }
+
+#frame {
+  transition: opacity 0.2s;
+}
+
 .loader {
   position: relative;
   overflow: hidden;
