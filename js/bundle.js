@@ -11511,6 +11511,12 @@ var Contact = function (_React$Component) {
             'div',
             { className: 'c-info-left' },
             _react2.default.createElement(
+              'div',
+              { className: 'c-info-picture' },
+              _react2.default.createElement('img', { id: 'self-portrait',
+                src: 'http://res.cloudinary.com/mwong9968/image/upload/v1510648287/highland-admin/_D618751.jpg' })
+            ),
+            _react2.default.createElement(
               'p',
               null,
               _react2.default.createElement(
@@ -11555,12 +11561,6 @@ var Contact = function (_React$Component) {
               null,
               'P: 985-664-9866'
             )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'c-info-picture' },
-            _react2.default.createElement('img', { id: 'self-portrait',
-              src: 'http://res.cloudinary.com/mwong9968/image/upload/v1510648287/highland-admin/_D618751.jpg' })
           )
         ),
         _react2.default.createElement(
