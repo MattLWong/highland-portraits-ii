@@ -355,14 +355,14 @@ main {
 
 .c-info-left {
   float: left;
-  width: 41.6667%;
+  width: 100%;
   padding-left: 17px;
-  padding-right: 12px;
+  padding-right: 0px;
   box-sizing: border-box;
 }
 
 .c-info-picture {
-  float: left;
+  float: right;
   width: 58.3333%;
 }
 

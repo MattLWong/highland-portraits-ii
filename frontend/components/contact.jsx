@@ -38,6 +38,11 @@ class Contact extends React.Component {
         </div>
         <div className='c-info clearfix'>
           <div className='c-info-left'>
+            <div className='c-info-picture'>
+              <img id="self-portrait"
+                src="http://res.cloudinary.com/mwong9968/image/upload/v1510648287/highland-admin/_D618751.jpg">
+              </img>
+            </div>
             <p><a href="http://mattlwong.com">Matt Wong</a> (b. 1990) is a portrait photographer based in Berkeley CA specializing in professional and artistic headshots.</p>
             <p className='spacer'>&nbsp;</p>
             <p>He is available for commissions throughout the East Bay, San Francisco, and beyond.</p>
@@ -45,13 +50,6 @@ class Contact extends React.Component {
             <p className="email">E: <a href="mailto:matt@highlandportraits.com">matt(at)highlandportraits.com</a></p>
             <p className='spacer'>&nbsp;</p>
             <p>P: 985-664-9866</p>
-
-
-          </div>
-          <div className='c-info-picture'>
-            <img id="self-portrait"
-              src="http://res.cloudinary.com/mwong9968/image/upload/v1510648287/highland-admin/_D618751.jpg">
-            </img>
           </div>
         </div>
         <div className='h-bar'>
