@@ -7,6 +7,41 @@ body {
   margin: 0 auto;
 }
 
+/*BANNER -------------*/
+
+#banner {
+  position: fixed;
+  width: 100%;
+  background: #FEE161;
+  left: 0;
+  right: 0;
+  top: -51px;
+  transition: all 0.2s;
+}
+
+.banner-content {
+  display: inline-block;
+  padding: 13px;
+  color: white;
+}
+
+.banner-close {
+  float: right;
+  padding: 13px 15px;
+  color: white;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.sign-up-here {
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.sign-up-here:hover {
+  color: #0d6d18;
+}
+
+
 /*HEADER---------------*/
 
 header {
@@ -194,7 +229,9 @@ main {
 
 /*SERVICES------------*/
 
-
+.dotted {
+  border-bottom: 1px dotted #3e2f2f;
+}
 
 .services-page {
   margin-top: 50px;
@@ -375,6 +412,14 @@ main {
   box-sizing: border-box;
 }
 
+#wufoo-ze82gxh0y1akbl {
+  padding: 0 17px;
+}
+
+.website-by {
+  text-align: center;
+}
+
 /*BOOK NOW-----------------------------*/
 
 .book-now-overlay {
@@ -404,6 +449,10 @@ main {
   height:1000px;
   border:0px;
   background-color:transparent;
+}
+
+#ycbmiframehighlandportraits {
+  height: 100% !important;
 }
 
 

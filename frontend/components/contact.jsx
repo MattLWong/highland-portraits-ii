@@ -1,6 +1,5 @@
 import React from 'react'
 
-import {waitForEl, myMap} from '../../js/iframe';
 import {wufoo} from '../../js/wufoo';
 
 class Contact extends React.Component {
@@ -17,10 +16,6 @@ class Contact extends React.Component {
   }
 
   componentDidMount() {
-    // this.startMap();
-    waitForEl('#map', function() {
-      myMap();
-    });
     wufoo();
   }
 
@@ -65,6 +60,11 @@ class Contact extends React.Component {
         Fill out my <a href="https://mwong9968.wufoo.com/forms/ze82gxh0y1akbl">online form</a>.
         </div>
         <div id="wuf-adv" style={this.style}>Use <a href="http://www.wufoo.com/gallery/templates/">Wufoo templates</a> to make your own HTML forms.</div>
+        <p className='spacer'>&nbsp;</p>
+          <div className='h-bar'>
+            <hr/>
+          </div>
+        <div className='c-info-left'><p className='website-by'>Website designed by <a href="https://mattlwong.github.io">Harbinger Design</a> &copy; 2017</p></div>
       </div>
     )
   }

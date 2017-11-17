@@ -6696,8 +6696,6 @@ var _react = __webpack_require__(12);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _iframe = __webpack_require__(53);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -6865,14 +6863,6 @@ var Gallery = function (_React$Component3) {
   }
 
   _createClass(Gallery, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      // this.startMap();
-      (0, _iframe.waitForEl)('#map', function () {
-        (0, _iframe.myMap)();
-      });
-    }
-  }, {
     key: 'toggleModal',
     value: function toggleModal(string, i) {
       var that = this;
@@ -11241,6 +11231,23 @@ var Wrapper = function (_React$Component) {
   }
 
   _createClass(Wrapper, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      setTimeout(function () {
+        document.getElementById('banner').style.top = "0px";
+      }, 1000);
+
+      window.addEventListener('scroll', function (e) {
+        var y = window.scrollY;
+        console.log(y);
+        if (y > 350) {
+          document.getElementById('banner').style.top = "-51px";
+        } else {
+          document.getElementById('banner').style.top = "0px";
+        }
+      });
+    }
+  }, {
     key: 'loadServices',
     value: function loadServices() {
       var _this2 = this;
@@ -11324,6 +11331,14 @@ var Wrapper = function (_React$Component) {
       document.getElementById('contact').classList.remove("active");
     }
   }, {
+    key: 'closeBanner',
+    value: function closeBanner() {
+      document.getElementById("banner").style.top = "-51px";
+      setTimeout(function () {
+        document.getElementById('banner').style.display = "none";
+      }, 200);
+    }
+  }, {
     key: 'render',
     value: function render() {
 
@@ -11346,7 +11361,22 @@ var Wrapper = function (_React$Component) {
           this.state.contactVisible ? _react2.default.createElement(_contact2.default, null) : null
         ),
         this.state.bookNowVisible ? _react2.default.createElement(_booknow2.default, {
-          toggleBookNow: this.toggleBookNow }) : null
+          toggleBookNow: this.toggleBookNow }) : null,
+        _react2.default.createElement(
+          'div',
+          { id: 'banner' },
+          _react2.default.createElement(
+            'p',
+            { className: 'banner-content' },
+            'Interested in attending a LinkedIn Workshop?  ',
+            _react2.default.createElement(
+              'a',
+              { href: 'https://goo.gl/q5REbR', className: 'sign-up-here' },
+              'Sign up here!'
+            )
+          ),
+          _react2.default.createElement('p', { className: 'banner-close fa fa-times', onClick: this.closeBanner })
+        )
       );
     }
   }]);
@@ -11440,8 +11470,6 @@ var _react = __webpack_require__(12);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _iframe = __webpack_require__(53);
-
 var _wufoo = __webpack_require__(96);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -11473,10 +11501,6 @@ var Contact = function (_React$Component) {
   _createClass(Contact, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      // this.startMap();
-      (0, _iframe.waitForEl)('#map', function () {
-        (0, _iframe.myMap)();
-      });
       (0, _wufoo.wufoo)();
     }
   }, {
@@ -11603,6 +11627,31 @@ var Contact = function (_React$Component) {
             'Wufoo templates'
           ),
           ' to make your own HTML forms.'
+        ),
+        _react2.default.createElement(
+          'p',
+          { className: 'spacer' },
+          '\xA0'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'h-bar' },
+          _react2.default.createElement('hr', null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'c-info-left' },
+          _react2.default.createElement(
+            'p',
+            { className: 'website-by' },
+            'Website designed by ',
+            _react2.default.createElement(
+              'a',
+              { href: 'https://mattlwong.github.io' },
+              'Harbinger Design'
+            ),
+            ' \xA9 2017'
+          )
         )
       );
     }
@@ -11806,6 +11855,8 @@ var _react = __webpack_require__(12);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _iframe = __webpack_require__(53);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -11824,6 +11875,13 @@ var Services = function (_React$Component) {
   }
 
   _createClass(Services, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      (0, _iframe.waitForEl)('#map', function () {
+        (0, _iframe.myMap)();
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -11836,6 +11894,16 @@ var Services = function (_React$Component) {
             'h4',
             null,
             'Hi! Thanks for stopping by.'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Interested in attending a LinkedIn workshop? ',
+            _react2.default.createElement(
+              'a',
+              { className: 'dotted', href: 'https://goo.gl/q5REbR' },
+              'Sign up here!'
+            )
           ),
           _react2.default.createElement(
             'p',
@@ -12247,6 +12315,11 @@ var wufoo = exports.wufoo = function wufoo() {
     var scr = d.getElementsByTagName(t)[0],
         par = scr.parentNode;par.insertBefore(s, scr);
   })(document, 'script');
+  window.addEventListener && window.addEventListener("message", function (event) {
+    if (event.origin === "https://highlandportraits.youcanbook.me") {
+      document.getElementById("ycbmiframehighlandportraits").style.height = event.data + "px";
+    }
+  }, false);
 };
 
 /***/ }),
