@@ -1,2 +1,2 @@
 # highland-portraits-ii
-A make of the original website using React completely
+A remake of the original website using React completely
