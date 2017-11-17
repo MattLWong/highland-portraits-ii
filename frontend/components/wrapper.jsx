@@ -22,6 +22,23 @@ class Wrapper extends React.Component {
     this.loadContact = this.loadContact.bind(this);
     this.toggleBookNow = this.toggleBookNow.bind(this);
   }
+
+  componentDidMount() {
+    setTimeout(function() {
+      document.getElementById('banner').style.top = "0px"
+    }, 1000)
+
+    window.addEventListener('scroll', function(e) {
+      let y = window.scrollY;
+      console.log(y);
+      if (y > 350) {
+        document.getElementById('banner').style.top = "-51px"
+      } else {
+        document.getElementById('banner').style.top = "0px"
+      }
+    })
+  }
+
   loadServices() {
     this.removeClasses();
     document.getElementById("services").classList.add("active");
@@ -86,6 +103,13 @@ class Wrapper extends React.Component {
     document.getElementById('contact').classList.remove("active")
   }
 
+  closeBanner() {
+    document.getElementById("banner").style.top = "-51px"
+    setTimeout(function() {
+      document.getElementById('banner').style.display = "none"
+    }, 200)
+  }
+
   render() {
 
     return(
@@ -112,9 +136,14 @@ class Wrapper extends React.Component {
 
         </main>
         { this.state.bookNowVisible ?
-          <BookNow
-            toggleBookNow = {this.toggleBookNow} /> : null }
+        <BookNow
+          toggleBookNow = {this.toggleBookNow} /> : null }
+        <div id="banner">
+            <p className='banner-content'>Interested in attending a LinkedIn Workshop?  <a href="https://goo.gl/q5REbR" className="sign-up-here">Sign up here!</a></p>
+            <p className='banner-close fa fa-times' onClick= { this.closeBanner }></p>
+        </div>
       </div>
+
     )
   }
 }

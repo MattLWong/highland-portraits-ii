@@ -27,13 +27,13 @@
     border-right: 0px;
   }
   .square {
-    --widthA: calc(100vw - 70px);
+    --widthA: calc(100vw - 50px);
     --widthB: calc(var(--widthA) / 2);
     width: calc(var(--widthB) + 3px);
     height: calc(var(--widthB) + 3px);
   }
   .thumbnail {
-    --widthA: calc(100vw - 70px);
+    --widthA: calc(100vw - 50px);
     --widthB: calc(var(--widthA) / 2);
     width: var(--widthB);
     height: var(--widthB);
@@ -41,6 +41,7 @@
 
   .services-page {
     margin-top: 18px;
+    margin-right: 10px;
   }
 
   .contact-page {
@@ -56,10 +57,14 @@
     border-top: 0px;
     border-right: 0px;
   }
+  .services-page {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   .square {
     width: calc(100vw);
     height: calc(100vw);
-    padding: 20px 30px 25px 10px;
+    padding: 20px 10px 10px 10px;
     box-sizing: border-box;
   }
 

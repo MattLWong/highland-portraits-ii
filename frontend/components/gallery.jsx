@@ -1,5 +1,4 @@
 import React from 'react';
-import {waitForEl, myMap} from '../../js/iframe';
 
 
 class Modal extends React.Component {
@@ -315,12 +314,6 @@ class Gallery extends React.Component {
       "Arjun, April 2017",
       "Fabrice, April 2017"
     ]
-  }
-  componentDidMount() {
-    // this.startMap();
-    waitForEl('#map', function() {
-      myMap();
-    });
   }
 
   toggleModal(string, i) {

@@ -17,5 +17,5 @@ export const wufoo = function() {
   try { ze82gxh0y1akbl = new WufooForm();ze82gxh0y1akbl.initialize(options);ze82gxh0y1akbl.display(); } catch (e) {}};
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
   })(document, 'script');
-
+  window.addEventListener && window.addEventListener("message", function(event){if (event.origin === "https://highlandportraits.youcanbook.me"){document.getElementById("ycbmiframehighlandportraits").style.height = event.data + "px";}}, false);
 }
