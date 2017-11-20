@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91640767-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-91640767-3');
+    </script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,18 +22,11 @@
     <script src="https://code.jquery.com/jquery-1.12.1.js"></script>
     <script type="text/javascript" src="{{site.baseurl}}/js/bundle.js"></script>
     <script src="https://use.fontawesome.com/3f219837f4.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91640767-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-91640767-3');
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuj1MpRwIoCZT-FlNEyO8kOzuXEXRV3O0">
     </script>
   </head>
   <body id="body">
       {{content}}
   </body>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuj1MpRwIoCZT-FlNEyO8kOzuXEXRV3O0">
-  </script>
 </html>

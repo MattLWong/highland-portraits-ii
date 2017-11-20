@@ -4,6 +4,20 @@ import {waitForEl, myMap} from '../../js/iframe';
 class Services extends React.Component {
 
   componentDidMount(){
+    setTimeout(function() {
+      document.getElementById('banner').style.top = "0px"
+    }, 1000)
+    window.addEventListener('scroll', function(e) {
+      let y = window.scrollY;
+      if (y > 350) {
+        document.getElementById('banner').style.top = "-51px"
+      } else {
+        document.getElementById('banner').style.top = "0px"
+      }
+    })
+    document.getElementById('home').classList.remove("active")
+    document.getElementById('contact').classList.remove("active")
+    document.getElementById("services").classList.add("active");
     waitForEl('#map', function() {
       myMap();
     });
@@ -16,7 +30,7 @@ class Services extends React.Component {
           <h4>Hi! Thanks for stopping by.</h4>
           <p>Interested in attending a LinkedIn workshop? <a className="dotted" href="https://goo.gl/q5REbR">Sign up here!</a></p>
           <p>One of the first things people notice about you is your profile picture. </p>
-          <p>As a portrait photographer, my objective is to create an unquestionably good image that serves your career or intended purposes. An effective picture conveys <strong>trust</strong>, <strong>mood</strong>, and <strong>confidence</strong> to the viewer. Whether you’re a budding scientist preparing your first talk, or a writer with a debut novel coming out, you’ll definitely need a picture that complements your personality and skills. </p>
+          <p>As a portrait photographer, my objective is to create an unquestionably good image that serves your career or intended purposes. An effective picture conveys <strong>trust</strong>, <strong>mood</strong>, and <strong>confidence</strong> to the viewer. Whether you’re a young scientist preparing your first talk, or a novelist with a new book coming out, you’ll surely need a picture that complements your personality and technical skills. </p>
           <p>Over the last three years I’ve developed a simple yet clean and elegant style to portraiture that I hope comes across in my work.</p>
           <p>I’m a big fan of <strong>color</strong> (!), and studio photography — along with post-processing — allows me to introduce and control a wide spectrum of grays and chromatic gradients for the perfect backdrop.</p>
           <p>If you’re looking to take your profile to the next level, or just looking for a new picture, you’ve found the right place!</p>

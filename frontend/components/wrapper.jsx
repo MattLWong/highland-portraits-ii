@@ -1,4 +1,6 @@
 import React from 'react';
+import { Route, HashRouter, Link, withRouter } from 'react-router-dom'
+
 import Gallery from './gallery';
 import Services from './services';
 import Contact from './contact';
@@ -18,67 +20,49 @@ class Wrapper extends React.Component {
     }
     this.loadServices = this.loadServices.bind(this);
     this.loadGallery = this.loadGallery.bind(this);
-    this.loadInfo = this.loadInfo.bind(this);
     this.loadContact = this.loadContact.bind(this);
     this.toggleBookNow = this.toggleBookNow.bind(this);
+
+
   }
 
   componentDidMount() {
     setTimeout(function() {
       document.getElementById('banner').style.top = "0px"
     }, 1000)
-
     window.addEventListener('scroll', function(e) {
       let y = window.scrollY;
-      console.log(y);
       if (y > 350) {
         document.getElementById('banner').style.top = "-51px"
       } else {
         document.getElementById('banner').style.top = "0px"
       }
     })
+    this.removeClasses();
+    if (this.props.location.pathname == "/contact") {
+      document.getElementById('contact').classList.add("active");
+    } else if (this.props.location.pathname == '/services') {
+      document.getElementById("services").classList.add("active");
+    } else if (this.props.location.pathname == '/'){
+      document.getElementById("home").classList.add("active");
+    }
   }
 
   loadServices() {
     this.removeClasses();
     document.getElementById("services").classList.add("active");
-    if (this.state.servicesVisible == false) {
-      this.setState({galleryVisible: false, infoVisible: false, contactVisible: false}, () => {
-        this.setState({servicesVisible: true})
-        window.scrollTo(0,0);
-      })
-    }
+    this.props.history.push('/services')
   }
   loadGallery() {
     this.removeClasses();
     document.getElementById("home").classList.add("active");
-    if (this.state.galleryVisible == false) {
-      this.setState({servicesVisible: false, infoVisible: false, contactVisible: false}, () => {
-        this.setState({galleryVisible: true})
-        window.scrollTo(0,0);
-      })
-    }
+    this.props.history.push('/')
   }
-  loadInfo() {
-    this.removeClasses();
-    document.getElementById("info").classList.add("active");
-    if (this.state.infoVisible == false) {
-      this.setState({servicesVisible: false, galleryVisible: false, contactVisible: false}, () => {
-        this.setState({infoVisible: true})
-        window.scrollTo(0,0);
-      })
-    }
-  }
+
   loadContact() {
     this.removeClasses();
     document.getElementById('contact').classList.add("active");
-    if (this.state.contactVisible == false) {
-      this.setState({servicesVisible: false, galleryVisible: false, infoVisible: false}, () => {
-        this.setState({contactVisible: true}
-        )
-        window.scrollTo(0,0);
-      })
-    }
+    this.props.history.push('/contact')
   }
   toggleBookNow() {
     this.setState({bookNowVisible: !this.state.bookNowVisible}, () => {
@@ -113,39 +97,32 @@ class Wrapper extends React.Component {
   render() {
 
     return(
-      <div className="wrapper">
-        <Header
-          loadServices = {this.loadServices}
-          loadGallery = {this.loadGallery}
-          loadInfo = {this.loadInfo}
-          loadContact = {this.loadContact}
-          toggleBookNow = {this.toggleBookNow}
-          />
-        <main id="main">
-          { this.state.galleryVisible ?
-            (<Gallery/>) : null
-          }
-          { this.state.servicesVisible ?
-            <Services/> : null
-          }
-          { this.state.infoVisible ?
-            <Info/> : null
-          }
-          { this.state.contactVisible ?
-            <Contact/> : null}
+        <div className="wrapper">
+          <Header
+            loadServices = {this.loadServices}
+            loadGallery = {this.loadGallery}
+            loadInfo = {this.loadInfo}
+            loadContact = {this.loadContact}
+            toggleBookNow = {this.toggleBookNow}
+            />
+          <main id="main">
+            <Route exact path="/" component={Gallery}/>
+            <Route path='/services'
+              component={Services}/>
+            <Route path='/contact' component={Contact}/>
 
-        </main>
-        { this.state.bookNowVisible ?
-        <BookNow
-          toggleBookNow = {this.toggleBookNow} /> : null }
-        <div id="banner">
-            <p className='banner-content'>Interested in attending a LinkedIn Workshop?  <a href="https://goo.gl/q5REbR" className="sign-up-here">Sign up here!</a></p>
-            <p className='banner-close fa fa-times' onClick= { this.closeBanner }></p>
+          </main>
+          { this.state.bookNowVisible ?
+          <BookNow
+            toggleBookNow = {this.toggleBookNow} /> : null }
+          <div id="banner">
+              <p className='banner-content'>Interested in attending a LinkedIn Workshop?  <a href="https://goo.gl/q5REbR" className="sign-up-here">Sign up here!</a></p>
+              <p className='banner-close fa fa-times' onClick= { this.closeBanner }></p>
+          </div>
         </div>
-      </div>
 
     )
   }
 }
 
-export default Wrapper;
+export default withRouter(Wrapper);

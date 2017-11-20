@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link, withRouter} from 'react-router-dom'
 
 class Header extends React.Component {
   render() {
@@ -39,4 +40,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);
