@@ -42,7 +42,7 @@ class Contact extends React.Component {
             <p className='spacer'>&nbsp;</p>
             <p>He is available for commissions throughout the East Bay, San Francisco, and beyond.</p>
             <p className='spacer'>&nbsp;</p>
-            <p className="email">E: <a href="mailto:matt@highlandportraits.com">matt(at)highlandportraits.com</a></p>
+            <p className="email">E: <a href="mailto:highlandportraits@gmail.com">highlandportraits(at)gmail.com</a></p>
             <p className='spacer'>&nbsp;</p>
             <p>P: 985-664-9866</p>
           </div>
