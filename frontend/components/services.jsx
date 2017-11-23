@@ -21,6 +21,7 @@ class Services extends React.Component {
     waitForEl('#map', function() {
       myMap();
     });
+    window.scrollTo(0,0);
   }
 
   render() {

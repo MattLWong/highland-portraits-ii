@@ -17,6 +17,7 @@ class Contact extends React.Component {
 
   componentDidMount() {
     wufoo();
+    window.scrollTo(0,0);
   }
 
   render() {

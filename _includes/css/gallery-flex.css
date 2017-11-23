@@ -1,3 +1,7 @@
+.gallery {
+  -webkit-backface-visibility: hidden;
+}
+
 .gallery::after {
   content: "";
   display: block;
@@ -13,7 +17,7 @@
 }
 
 .thumbnail {
-  margin: 0 3px 3px 0;
+  padding: 0 3px 3px 0;
   height: 208px;
   width: 208px;
   animation: fadein;
@@ -23,10 +27,11 @@
 .square-img {
   height: 100%;
   transition: all 0.1s;
+  -webkit-backface-visibility: hidden;
 }
 
 .square-img:hover {
-  opacity: 0.95;
+ opacity: 0.95;
 }
 
 @keyframes fadein {

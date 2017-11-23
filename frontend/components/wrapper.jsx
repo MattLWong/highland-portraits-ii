@@ -46,6 +46,7 @@ class Wrapper extends React.Component {
     } else if (this.props.location.pathname == '/'){
       document.getElementById("home").classList.add("active");
     }
+    window.scrollTo(0,0);
   }
 
   loadServices() {
