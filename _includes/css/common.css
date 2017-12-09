@@ -23,14 +23,16 @@ body {
   display: inline-block;
   padding: 13px;
   color: white;
+  transition: all 0.2s;
 }
 
 .banner-close {
   float: right;
-  padding: 13px 15px;
+  padding: 13px 15px 13px 0px;
   color: white;
   margin-top: 4px;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 .sign-up-here {
