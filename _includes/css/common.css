@@ -172,7 +172,7 @@ header {
 
 .external-links {
   display: inline;
-  margin-bottom: -20;
+  vertical-align: -2px;
 }
 
 .external-links a span {
