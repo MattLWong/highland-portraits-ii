@@ -11,7 +11,7 @@ class BookNow extends React.Component {
             frameBorder="0" allowTransparency="true"></iframe>
         </div>
       </div>
-    )
+    );
   }
 }
 

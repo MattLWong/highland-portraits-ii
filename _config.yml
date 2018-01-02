@@ -3,4 +3,4 @@ markdown: kramdown
 baseurl: highlandportraits.com
 exclude: ['README.md']
 permalink: pretty
-exclude: [node_modules, webpack.config.js, package.json]
+exclude: [node_modules, webpack.config.js, package.json, frontend]
