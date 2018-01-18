@@ -57,10 +57,10 @@ class Modal extends React.Component {
 class Square extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {style: {display: 'none'}}
+    this.state = {style: {display: 'block', opacity: 0, visibility: "hidden"}}
   }
   handleImageLoaded() {
-    this.setState({style: {display: 'block'}})
+    this.setState({style: {opacity: 1, visibility: "visible"}})
   }
   render() {
     const style = {

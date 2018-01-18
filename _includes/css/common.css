@@ -115,7 +115,7 @@ header {
 #book-now {
   display: inline-block;
   background-color: #FEE161;
-  transition: all 0.8s;
+  transition: all 0.5s;
   border-radius: 2px;
   cursor: pointer;
 }
@@ -156,8 +156,8 @@ header {
 .hvr-push:hover, .hvr-push:focus, .hvr-push:active {
   -webkit-animation-name: hvr-push;
   animation-name: hvr-push;
-  -webkit-animation-duration: 0.2s;
-  animation-duration: 0.2s;
+  -webkit-animation-duration: 0.1s;
+  animation-duration: 0.1s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;

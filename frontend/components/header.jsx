@@ -26,7 +26,7 @@ class Header extends React.Component {
               <a href="https://www.facebook.com/highlandportraits/" className="facebook-icon">
                 <span className="external-link first fa fa-facebook-official"></span>
               </a>
-              <a href="#" className="instagram-icon">
+              <a href="https://www.instagram.com/highlander9968/" className="instagram-icon">
                 <span className="external-link fa fa-instagram"></span>
               </a>
               <a href="mailto:matt@highlandportraits.com" className="mail-icon">
