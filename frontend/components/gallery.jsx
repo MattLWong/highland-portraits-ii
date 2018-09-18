@@ -7,15 +7,15 @@ class Modal extends React.Component {
     this.state = {
       imageStatus: {display: 'none'},
       frozenStyle: {opacity: '1'}
-    }
+    };
   }
 
   handleFrozenImageLoaded() {
-    this.setState({imageStatus: {display: 'block'}})
+    this.setState({imageStatus: {display: 'block'}});
   }
 
   reduceOpacity() {
-    this.setState({frozenStyle: {opacity: '0'}})
+    this.setState({frozenStyle: {opacity: '0'}});
   }
 
   render() {
@@ -50,23 +50,23 @@ class Modal extends React.Component {
           </figure>
         </div>
       </div>
-    )
+    );
   }
 }
 
 class Square extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {style: {display: 'block', opacity: 0, visibility: "hidden"}}
+    this.state = {style: {display: 'block', opacity: 0, visibility: "hidden"}};
   }
   handleImageLoaded() {
-    this.setState({style: {opacity: 1, visibility: "visible"}})
+    this.setState({style: {opacity: 1, visibility: "visible"}});
   }
   render() {
     const style = {
       background: `url(${this.props.squareUrl})`,
       backgroundSize: 'cover'
-    }
+    };
     return(
       <a onClick={() => this.props.enlarge(this.props.idx)}>
         <div className='square'>
@@ -78,7 +78,7 @@ class Square extends React.Component {
           </div>
         </div>
       </a>
-    )
+    );
   }
 }
 
@@ -91,7 +91,7 @@ class Gallery extends React.Component {
       imageUrl: "",
       frozenUrl: "",
       caption: ""
-    }
+    };
     this.toggleModal = this.toggleModal.bind(this);
     this.enlarge = this.enlarge.bind(this);
 
@@ -101,36 +101,42 @@ class Gallery extends React.Component {
     this.captions = captions;
   }
 
+  componentDidMount() {
+    window.scrollTo(0,0);
+  }
+
   toggleModal(string, i) {
     let that = this;
     if (string == "off") {
-      document.getElementById('frame').style.opacity = "0"
+      document.getElementById('frame').style.opacity = "0";
+      // document.getElementById('header').style.filter = '';
+      // document.getElementById('tiles').style.filter = '';
       setTimeout(function() {
         that.setState({modalVisible: false});
-      }, 200)
+      }, 200);
     } else if (string == 'next') {
       if (i == this.squareUrls.length - 1) {
-        document.getElementById('frame').style.opacity = "0"
+        document.getElementById('frame').style.opacity = "0";
         setTimeout(function() {
           that.setState({modalVisible: false}, () => that.enlarge(0));
-        }, 200)
+        }, 200);
       } else {
-        document.getElementById('frame').style.opacity = "0"
+        document.getElementById('frame').style.opacity = "0";
         setTimeout(function() {
           that.setState({modalVisible: false}, () => that.enlarge(i+1));
-        }, 200)
+        }, 200);
       }
     } else if (string == 'before') {
       if (i == 0) {
-        document.getElementById('frame').style.opacity = "0"
+        document.getElementById('frame').style.opacity = "0";
         setTimeout(function() {
-          that.setState({modalVisible: false}, () => that.enlarge(that.squareUrls.length-1))
-        }, 200)
+          that.setState({modalVisible: false}, () => that.enlarge(that.squareUrls.length-1));
+        }, 200);
       } else {
-        document.getElementById('frame').style.opacity = "0"
+        document.getElementById('frame').style.opacity = "0";
         setTimeout(function() {
-          that.setState({modalVisible: false}, () => that.enlarge(i-1))
-        }, 200)
+          that.setState({modalVisible: false}, () => that.enlarge(i-1));
+        }, 200);
       }
     }
   }
@@ -144,10 +150,9 @@ class Gallery extends React.Component {
          enlarge={this.enlarge}
          toggleModal={this.toggleModal}
          alt={this.captions[idx]}
-         />)
-    })
+         />);
+    });
   }
-
 
   enlarge(id) {
     this.setState({
@@ -156,7 +161,11 @@ class Gallery extends React.Component {
       frozenUrl: this.frozenUrls[id],
       caption: this.captions[id],
       modalVisible: true
-    })
+    }, function() {
+      //blur header and main
+      // document.getElementById('header').style.filter = 'blur(2px)';
+      // document.getElementById('tiles').style.filter = 'blur(2px)';
+    });
   }
 
   render() {
@@ -170,9 +179,11 @@ class Gallery extends React.Component {
             caption={this.state.caption}
             toggleModal={this.toggleModal}/>)
           : null }
-        {this.renderSquares()}
+        <div id="tiles" className='cf'>
+          {this.renderSquares()}
+        </div>
       </div>
-    )
+    );
   }
 }
 

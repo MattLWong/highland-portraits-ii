@@ -23,6 +23,7 @@
   background-color: hsla(0, 0%, 100%, .6);
   cursor: pointer;
   display: block;
+  transition: 5.2s all;
 }
 
 .frame {
@@ -131,7 +132,7 @@ figure {
   margin: 0;
 }
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
   .object {
     height: calc(100vh - 240px)
   }
@@ -146,9 +147,9 @@ figure {
   .loader {
     height: calc(100vh - 240px);
   }
-}
+} */
 
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) {
   .object {
     height: calc(100vh - 290px)
   }
@@ -163,9 +164,9 @@ figure {
   .loader {
     height: calc(100vh - 290px);
   }
-}
+} */
 
-@media screen and (max-width: 465px) {
+@media screen and (max-width: 600px) {
   .frame {
     height: auto;
     margin: 0px;

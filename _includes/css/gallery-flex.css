@@ -1,5 +1,6 @@
 .gallery {
   -webkit-backface-visibility: hidden;
+  margin-top: 15px;
 }
 
 .gallery::after {
@@ -10,6 +11,10 @@
 
 .gallery a {
   cursor: pointer;
+}
+
+#tiles {
+  transition: filter .2s;
 }
 
 .square {
@@ -35,7 +40,7 @@
 }
 
 .square-img:hover {
- opacity: 0.95;
+ opacity: 0.92;
 }
 
 @-webkit-keyframes fadein {

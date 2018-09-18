@@ -6,6 +6,6 @@ const Root = () => (
   <HashRouter>
     <Wrapper/>
   </HashRouter>
-)
+);
 
 export default Root;

@@ -1,64 +1,33 @@
+let f = "http://res.cloudinary.com/mwong9968/image/upload/v1524411975/highland-4-22-18/frozen/";
+let s = "http://res.cloudinary.com/mwong9968/image/upload/v1524423758/highland-4-22-18/square/";
+let frozenurls = [];
+let squareurls = [];
+for (let i = 1; i < 73; i++) {
+  frozenurls.push(f + i + '.jpg');
+}
+
+for (let i = 1; i < 17; i++) {
+  squareurls.push(s + i + '.jpg');
+}
 const preload = function() {
   var frozenImages = new Array();
-  function preloadFrozen() {
-    for (let i = 0; i < arguments.length; i++) {
+  var squareImages = new Array();
+  function preloadFrozen(array1, array2) {
+    for (let i = 0; i < array1.length; i++) {
+      //load frozen images
       frozenImages[i] = new Image();
-      frozenImages[i].src = arguments[i];
-      console.log("preloaded" + i);
+      frozenImages[i].src = array1[i];
     }
+    for (let j = 0; j < array2.length; j++) {
+      //load first 12 images
+      squareImages[j] = new Image();
+      squareImages[j].src = array2[j];
+    }
+    //load profile picture
+    var pp = new Image();
+    pp.src = "http://res.cloudinary.com/mwong9968/image/upload/v1510648287/highland-admin/_D618751.jpg";
   }
-  preloadFrozen(
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/1.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/2.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/3.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/4.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/5.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/6.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/7.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/8.jpg", "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/9.jpg", "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/10.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/11.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/12.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/13.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/14.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/15.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/16.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/17.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/18.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/19.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/20.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/21.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/22.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/23.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/24.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/25.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/26.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/27.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/28.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/29.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/30.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/31.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/32.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/33.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/34.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/35.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/36.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/37.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/38.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/39.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/40.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/41.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/42.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/43.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/44.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/45.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/46.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/47.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/48.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/49.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/50.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/51.jpg",
-    "http://res.cloudinary.com/mwong9968/image/upload/v15163/highland/frozen/2.jpg"
-  );
+  preloadFrozen(frozenurls, squareurls);
 };
 
 
